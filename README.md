@@ -18,9 +18,14 @@ It does not export real Mac module results or control any device or library.
 5. Send a synthetic report from the Mac. The paired device has five real diagnostic
    sensors; no dashboard installation or household entity selection is required.
 
-The existing Mac prototype intentionally connects only to `https://127.0.0.1:18129`
-and verifies the dedicated lab root. It **cannot connect to household/LAN addresses**.
-Installing this ZIP does not remove that restriction. The integration uses HA's
+Mac prototype 0.8 adds explicitly entered HTTPS DNS/IPv4 addresses, macOS trust,
+and a per-link selected DER certificate with fingerprint display. Its bundled lab
+certificate mode stays restricted to `https://127.0.0.1:18129`. Mac 0.7 remains
+loopback-only. Mac 0.8 has been verified using a disposable loopback hostname lab;
+no two-computer LAN or household connection is claimed. IPv6 is not yet supported.
+The client rejects hostname/date/chain failures and redirects, stores credentials
+only in memory, and still sends synthetic reports manually after both approvals.
+The integration uses HA's
 native HTTPS listener; it opens no new server or port and installs no certificates.
 Plain HTTP reporting and browser Origin headers are rejected. Behind a proxy,
 HTTPS and HA's trusted-proxy configuration must be correct; do not disable TLS checks.
@@ -77,8 +82,8 @@ pair or remove entries. There are no integration services, action entities, cont
 outbound HTTP requests, discovery, or third-party Python dependencies.
 
 One receiver and one paired Mac are supported. Persistent unattended credentials,
-real-summary export, LAN endpoint support in the Mac, production packaging/release
-validation, and an approved backed-up household pilot remain separate gates.
+real-summary export, two-computer LAN verification, production packaging/release
+work, and an approved backed-up household pilot remain separate gates.
 
 ## Local reproducible verification
 

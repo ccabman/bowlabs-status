@@ -123,7 +123,11 @@ async def main():
                             response.status,
                             await response.text(),
                         )
-                        return await response.json()
+                        return (
+                            await response.json()
+                            if response.content_type == "application/json"
+                            else None
+                        )
 
                 async def post(
                     action, body=None, secret=None, expected=200, extra=None
@@ -205,7 +209,7 @@ async def main():
                     "protocol": 1,
                     "source": "synthetic",
                     "sequence": 1,
-                    "reportedAt": time.time(),
+                    "reportedAt": int(time.time()),
                     "modules": {
                         "photos": {"state": "checked", "permission": "full"},
                         "calendar": {"state": "checked", "permission": "full"},

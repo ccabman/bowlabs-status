@@ -19,7 +19,7 @@ It does not export real Mac module results or control any device or library.
    sensors; no dashboard installation or household entity selection is required.
 
 Mac prototype 0.8 adds explicitly entered HTTPS DNS/IPv4 addresses, macOS trust,
-and a per-link selected DER certificate with fingerprint display. Its bundled lab
+and a per-link pasted public PEM certificate with fingerprint display. Its bundled lab
 certificate mode stays restricted to `https://127.0.0.1:18129`. Mac 0.7 remains
 loopback-only. Mac 0.8 has been verified using a disposable loopback hostname lab;
 no two-computer LAN or household connection is claimed. IPv6 is not yet supported.

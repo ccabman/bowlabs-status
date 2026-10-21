@@ -1,0 +1,48 @@
+{
+  "title": "BowLabs Status",
+  "config": {
+    "step": {
+      "enable": {
+        "title": "Enable BowLabs status pairing",
+        "description": "Enable the status-only receiver, then start the HTTPS status link on your test Mac. Add BowLabs Status again to enter its code. Only synthetic status reports are accepted. No household devices, picture frame, Photos library, Calendar events, or Music account are accessed. HTTPS is required for Mac reporting."
+      },
+      "pair": {
+        "title": "Approve the Mac status link",
+        "description": "Enter the eight-digit code shown in the Mac app. This approves synthetic status reporting only. Finish by approving on the Mac. The code expires after two minutes; the reporting session expires after ten minutes. Remove this paired entry or use Configure \u2192 revoke to stop access immediately.",
+        "data": {
+          "code": "Code shown on the Mac"
+        }
+      }
+    },
+    "error": {
+      "pairing_refused": "Check the code, expiry, receiver availability, and attempt limit. Start a new code on the Mac if needed."
+    },
+    "abort": {
+      "already_paired": "One Mac is supported in this pilot. Configure the existing Mac entry to revoke or re-pair it, or remove it first."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage the Mac status link",
+        "description": "Revoke stops access and clears current status immediately. Pair accepts a new code; reporting still requires confirmation on the Mac. Restarting Home Assistant invalidates all reporting sessions.",
+        "data": {
+          "action": "Action"
+        }
+      },
+      "pair": {
+        "title": "Re-pair the Mac",
+        "description": "Start a new HTTPS status-link code on the Mac, enter it here, then approve on the Mac. If the old session is still active, revoke it first.",
+        "data": {
+          "code": "New code shown on the Mac"
+        }
+      }
+    },
+    "error": {
+      "pairing_refused": "The code is invalid, expired, already reserved, or temporarily limited."
+    },
+    "abort": {
+      "receiver_options": "Configure the paired Mac entry to revoke or re-pair. Removing or disabling the receiver stops all reporting."
+    }
+  }
+}

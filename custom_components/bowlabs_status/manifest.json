@@ -1,9 +1,6 @@
 {
   "domain": "bowlabs_status",
   "name": "BowLabs Status",
-  "categories": [
-    "computers_network.monitoring"
-  ],
   "codeowners": [
     "@ccabman"
   ],

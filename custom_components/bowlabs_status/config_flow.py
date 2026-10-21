@@ -3,9 +3,8 @@
 import re
 
 import probatio
-from homeassistant.core import callback
-
 from homeassistant import config_entries
+from homeassistant.core import callback
 
 from .const import DOMAIN
 from .manager import get_manager

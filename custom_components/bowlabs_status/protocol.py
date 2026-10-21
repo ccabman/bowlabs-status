@@ -35,7 +35,7 @@ def decode(body):
             object_pairs_hook=unique,
             parse_constant=lambda _: (_ for _ in ()).throw(Refused()),
         )
-    except (ValueError, TypeError, UnicodeError):
+    except ValueError, TypeError, UnicodeError:
         raise Refused() from None
 
 

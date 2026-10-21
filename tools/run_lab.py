@@ -8,11 +8,10 @@ import socket
 from pathlib import Path
 
 from aiohttp import web
+from homeassistant import bootstrap, loader
 from homeassistant.auth.providers.homeassistant import InvalidUsername
 from homeassistant.core import HomeAssistant
 from homeassistant.setup import async_setup_component
-
-from homeassistant import bootstrap, loader
 
 ROOT = Path(__file__).resolve().parents[2]
 LAB = ROOT / "work/installable-status.nosync"

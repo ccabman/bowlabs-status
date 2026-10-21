@@ -11,13 +11,12 @@ import time
 from pathlib import Path
 
 import aiohttp
+from homeassistant import bootstrap, loader
 from homeassistant.components.http.config import (
     HTTP_STORAGE_SCHEMA,
     async_get_and_load_store,
 )
 from homeassistant.core import HomeAssistant
-
-from homeassistant import bootstrap, loader
 
 
 async def main():

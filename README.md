@@ -25,8 +25,7 @@ native HTTPS listener; it opens no new server or port and installs no certificat
 Plain HTTP reporting and browser Origin headers are rejected. Behind a proxy,
 HTTPS and HA's trusted-proxy configuration must be correct; do not disable TLS checks.
 
-This package is for isolated testing first. It is not HACS-listed, remotely published,
-or approved for household installation. The standalone source and CI live in the private `ccabman/bowlabs-status` repository.
+This package is for isolated testing first. It is not HACS-listed or approved for household installation. The standalone source and CI live in the public `ccabman/bowlabs-status` repository.
 The current implementation and instructions are also in this local package.
 
 ## Revoke, re-pair, disable, remove
